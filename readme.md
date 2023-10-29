@@ -1,29 +1,64 @@
-# Welcome to Round 3 of your NodeJS Interview
-# ![CodeBuddy Round 3 Interview](https://codebuddy.co/assets/img/Logo.svg)
+# Debugging and Code Optimization Challenge
 
-> This round is to test your **Debugging capabilities, Code optimization skills and Code quality** in a real world application.
+Welcome to the Debugging and Code Optimization Challenge! In this exercise, you'll be testing your debugging skills and optimizing code in a real-world application. This repository uses Express.js and Mongoose to create a backend server and perform MongoDB operations. Before you begin, please read the instructions carefully.
 
-> This repo uses express js and mongooose to create a backend server and performs DB(MongoDB) operations.
+## Instructions
 
-> **_Please carefully read the instructions mentioned below._**
+1. **Do not use any external libraries for pagination.**
+2. **Pagination must be implemented on the database directly, not in JavaScript.**
+3. Create a new `.env` file by copying the `.env.example` file. You can do this with the following command:
 
-# Note
-1. **DON'T CLONE THIS REPO and DON'T MAKE PULL REQUESTS TO THIS REPO.** FORK this repo to your own GitHub account then clone it. Fork button is the top right corner of the page. The forked URL should look something like this: https://github.com/${YOUR_GITHUB_USERNAME}/node
-# ![How to Fork](src/assets/images/fork.png)
-2. **You should not use any external library for pagination.**
-3. **You should not use JS for paginating the data, pagination has to be done on DB directly.**
-3. Create a new `.env` file by copying the `.env.example` file. Run `cp .env.example .env`
-4. Install the dependencies by running `yarn` or `npm i`.
-5. Run `npm run test` or `yarn test` to run the test cases. **All test cases should pass in your final submit otherwise the task is considered as incomplete.**
-6. `npm run seed` or `yarn seed` creates 100 users and 1-5 posts per user. **Use this seeder to populate the database.**
-7. Work on `src/controllers/user.controller.js@getUsersWithPostCount` TODO section only.
+    ```
+    cp .env.example .env
+    ```
 
-# Task
-`[GET] http://localhost:3000/users` should return all the users with their post count. This API should have server side pagination implemented.
+4. Install the necessary dependencies by running either of the following commands:
 
-The response from this API should be similar to the below mentioned response format.
+    ```
+    yarn
+    ```
 
-```
+    or
+
+    ```
+    npm i
+    ```
+
+5. Run the test cases using the following commands. Make sure that all test cases pass in your final submission; otherwise, the task will be considered incomplete.
+
+    ```
+    npm run test
+    ```
+
+    or
+
+    ```
+    yarn test
+    ```
+
+6. To populate the database with data, run the following command:
+
+    ```
+    npm run seed
+    ```
+
+    or
+
+    ```
+    yarn seed
+    ```
+
+   This command will create 100 users and 1-5 posts per user. You should use this seeder to populate the database.
+
+7. You should focus on the `src/controllers/user.controller.js` file, specifically the `getUsersWithPostCount` section marked as "TODO."
+
+## Task
+
+Your main task is to implement a `[GET] http://localhost:3000/users` endpoint that returns all the users with their post count. This API should include server-side pagination.
+
+The response from this API should follow the format shown below:
+
+```json
 {
     "data": {
         "users": [
@@ -91,6 +126,3 @@ The response from this API should be similar to the below mentioned response for
         }
     }
 }
-```
-
-### Time allocated: 1hr 30min (if you need extra time please reach out to the HR who is taking your interview).
